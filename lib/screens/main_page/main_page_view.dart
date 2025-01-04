@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../model/sidebar.dart';
 import '../../model/user_model.dart';
-import '../expense_accounts/expense_accounts_view.dart';
+import '../expense_accounts/accounts_view.dart';
 import '../import_sms/sms_import_view.dart';
 import 'main_page_controller.dart';
 
@@ -25,7 +25,7 @@ class MainPageView extends StatelessWidget {
         label: 'Accounts',
         icon: Icons.account_balance_wallet_outlined,
         activeIcon: Icons.account_balance_wallet,
-        page: ExpenseAccountsView(
+        page: AccountsView(
           toggleDrawer: _controller.toggleDrawer,
         ),
       ),

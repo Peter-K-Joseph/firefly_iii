@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../model/transaction_accounts_model.dart';
 import '../manage_transaction_account/manage_transacc_view.dart';
-import 'expense_account_controller.dart';
+import 'account_controller.dart';
 import '../../services/helpers/text_handler.dart';
 
-class ExpenseAccountsView extends StatelessWidget {
-  final ExpenseAccountController controller = ExpenseAccountController();
+class AccountsView extends StatelessWidget {
+  final AccountController controller = AccountController();
   final Function toggleDrawer;
 
-  ExpenseAccountsView({super.key, required this.toggleDrawer});
+  AccountsView({super.key, required this.toggleDrawer});
 
   void showAccountDetails(
       List<TransactionAccountsModel> accounts, BuildContext context) {
@@ -67,7 +67,7 @@ class ExpenseAccountsView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Expense Accounts'),
+        title: const Text('Accounts'),
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
@@ -161,7 +161,7 @@ class ExpenseAccountsView extends StatelessWidget {
                           return Column(
                             children: [
                               ListTile(
-                                onLongPress: () {
+                                onTap: () {
                                   showAccountDetails(value, context);
                                 },
                                 title: Text(key),

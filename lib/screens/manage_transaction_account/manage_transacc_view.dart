@@ -30,7 +30,9 @@ class ManageTransactionAccountView extends StatelessWidget {
         ],
       ),
       body: Container(
-        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           color: Colors.white,
         ),

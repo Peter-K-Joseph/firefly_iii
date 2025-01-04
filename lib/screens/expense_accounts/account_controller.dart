@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../model/transaction_accounts_model.dart';
 import '../../services/network_requests.dart';
 
-class ExpenseAccountController extends ChangeNotifier {
+class AccountController extends ChangeNotifier {
   final NetworkRequests _networkRequests = NetworkRequests();
   final DatabaseService _databaseService = DatabaseService();
   final ValueNotifier<int> signalUpdate = ValueNotifier(0);

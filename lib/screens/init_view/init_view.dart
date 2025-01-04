@@ -1,6 +1,8 @@
 import 'package:firefly_iii/model/enums.dart';
+import 'package:firefly_iii/screens/expense_accounts/accounts_view.dart';
 import 'package:flutter/material.dart';
 
+import '../import_sms/sms_import_view.dart';
 import '../login/login_view.dart';
 import '../main_page/main_page_view.dart';
 import 'init_controller.dart';
@@ -13,6 +15,7 @@ class InitView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      Navigator.of(context).popUntil((route) => route.isFirst);
       controller.init().then((route) {
         switch (route) {
           case InitialRoute.login:
@@ -27,7 +30,9 @@ class InitView extends StatelessWidget {
             // ignore: use_build_context_synchronously
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => MainPageView(),
+                builder: (context) => AccountsView(
+                  toggleDrawer: () {},
+                ),
               ),
             );
             break;
